@@ -28,7 +28,7 @@ class CodeNamesController < ApplicationController
 
     respond_to do |format|
       if @code_name.save
-        format.html { redirect_to @code_name, notice: 'Code name was successfully created.' }
+        format.html { redirect_to code_names_path, notice: 'Code name was successfully created.' }
         format.json { render :show, status: :created, location: @code_name }
       else
         format.html { render :new }
