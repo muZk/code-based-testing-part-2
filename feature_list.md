@@ -2,6 +2,9 @@
 
 incorporar aliens como luchadores (contenders)
 
+weapon
+	uniq name - if exists? then return the existing one when creating
+
 robots
 	start with default health - defined somewhere else (code_name)
 
@@ -43,5 +46,9 @@ servicio web externo para inicializar
 	robots
 	armas
 
+mover el health managemente de robot y robot_weapon a un módulo en un concern
+
+
 -- hacer un cambio grande sobre la repartición de código
 y que siga funcionando... 
+
