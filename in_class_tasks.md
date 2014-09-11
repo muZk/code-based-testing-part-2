@@ -6,9 +6,9 @@
 
 * Show how to add a module
 
---- 
 * Make custom_matcher
 
+--- 
 * Stubs and Mocks
 
 * Make them work

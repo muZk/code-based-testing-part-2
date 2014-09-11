@@ -79,3 +79,12 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 end
+
+
+# other way to extend matchers
+RSpec::Matchers.define :be_a_multiple_of do |expected|
+  define_method :is_multiple? do |actual|
+    actual % expected == 0
+  end
+  match { |actual| is_multiple?(actual) }
+end
