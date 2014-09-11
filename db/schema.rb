@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140909235653) do
   create_table "code_names", force: true do |t|
     t.string   "name"
     t.string   "info_reference"
+    t.integer  "damage"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -14,7 +14,8 @@ class RobotsController < ApplicationController
 
   # GET /robots/new
   def new
-    @robot = Robot.new
+    @robot = Robot.new()
+    @robot.health = Health.new 
   end
 
   # GET /robots/1/edit
@@ -25,12 +26,12 @@ class RobotsController < ApplicationController
   # POST /robots.json
   def create
     @robot = Robot.new(robot_params)
-
     respond_to do |format|
       if @robot.save
         format.html { redirect_to @robot, notice: 'Robot was successfully created.' }
         format.json { render :show, status: :created, location: @robot }
       else
+        @robot.health = Health.new unless @robot.health
         format.html { render :new }
         format.json { render json: @robot.errors, status: :unprocessable_entity }
       end
@@ -65,6 +66,7 @@ class RobotsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_robot
       @robot = Robot.find(params[:id])
+      @robot.health = Health.new unless @robot.health
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

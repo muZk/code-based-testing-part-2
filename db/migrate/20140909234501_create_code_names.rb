@@ -3,6 +3,7 @@ class CreateCodeNames < ActiveRecord::Migration
     create_table :code_names do |t|
       t.string :name
       t.string :info_reference
+      t.integer :damage
 
       t.timestamps
     end
