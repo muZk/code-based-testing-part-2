@@ -38,6 +38,8 @@ simulación de varios combates consecutivos
 vistas
 	probar vistas anidadas
 	formulario anidado - asignar o crear una nueva serie
+	probar que la vista(index-like) siempre está activada correctamente
+		extenderlo para sus subdominios
 
 factories ?? - 
 	

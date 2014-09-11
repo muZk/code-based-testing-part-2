@@ -5,23 +5,23 @@ RSpec.describe Weapon, :type => :model do
 
   context "Factories" do 
     it ":health" do 
-      health = FactoryGirl.create(:gun)
-      expect(health.id).to be > 0
+      gun = FactoryGirl.create(:gun)
+      expect(gun.id).to be > 0
     end
 
     it ":health_800" do 
-      health = FactoryGirl.create(:rifle)
-      expect(health.id).to be > 0
+      gun = FactoryGirl.create(:rifle)
+      expect(gun.id).to be > 0
     end
 
     it ":health_1000" do 
-      health = FactoryGirl.create(:machine_gun)
-      expect(health.id).to be > 0
+      gun = FactoryGirl.create(:machine_gun)
+      expect(gun.id).to be > 0
     end
 
     it ":health_x" do 
-      health = FactoryGirl.create(:bazuka)
-      expect(health.id).to be > 0
+      gun = FactoryGirl.create(:bazuka)
+      expect(gun.id).to be > 0
     end
 
     it "should not create two different instances for the same (defined) Weapon" do 

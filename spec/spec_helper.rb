@@ -78,6 +78,12 @@ RSpec.configure do |config|
 =end
 
   config.include FactoryGirl::Syntax::Methods
+
+  config.mock_with :rspec do |c|
+    # allow should as  valid expectation
+    c.syntax = [:should, :expect]
+  end
+
 end
 
 

@@ -22,4 +22,8 @@ class RobotWeapon < ActiveRecord::Base
         self.health.current > 0
     end
 
+    def play_dead
+        @old_health = health.current if @old_health.blank? or health.current > 0
+        health.current = 0
+    end
 end

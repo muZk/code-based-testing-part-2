@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Health, :type => :model do
   # pending "add some examples to (or delete) #{__FILE__}"
+  
   context "Factories" do 
-    
     it ":health" do 
       health = FactoryGirl.create(:health)
       expect(health.id).to be > 0
@@ -24,5 +24,11 @@ RSpec.describe Health, :type => :model do
       expect(health.id).to be > 0
     end
 
+    it ":health_x - same test written differently" do 
+      health = FactoryGirl.create(:health_x)
+      health.save  # health.valid? 
+      expect(health.errors).to be_empty
+    end
   end
+
 end
