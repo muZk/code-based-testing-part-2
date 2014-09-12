@@ -44,6 +44,7 @@ RSpec.describe Robot, :type => :model do
     it "should return a number" do 
       # stub valid_and_heavier_weapon?
       robot = FactoryGirl.create(:robot)
+      # robot.unstub
       robot.stub(:valid_and_heavier_weapon?)
       expect(robot.calculate_damage).to be > 0 
       # should be a number ... in the future might accept 0

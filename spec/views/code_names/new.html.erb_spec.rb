@@ -22,8 +22,8 @@ RSpec.describe "code_names/new", :type => :view do
 
   # rspec with capybara 
   it "create a new code_name" do
-    # visit code_names_path
-    visit "code_names/new"
+    visit new_code_name_path
+    # visit "code_names/new"
     email = "user@example.com"
     within("#new_code_name") do
       fill_in 'Name', :with => email

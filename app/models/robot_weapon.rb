@@ -13,7 +13,11 @@ class RobotWeapon < ActiveRecord::Base
     after_initialize :check_attrs
 
     def check_attrs
-        self.health = Health.new unless  self.health
+        unless self.health
+            self.health = Health.new 
+            self.health.current = 1
+            self.health.maximum = 1
+        end
     end
 
     delegate :damage, to: :weapon
