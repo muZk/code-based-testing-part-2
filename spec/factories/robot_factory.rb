@@ -1,4 +1,7 @@
 FactoryGirl.define do
+
+    Robot.create
+
     factory :robot do
         after(:build) do |roboto, evaluator|
             roboto.code_name = FactoryGirl.create(:code_name)
