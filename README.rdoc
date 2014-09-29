@@ -1,28 +1,11 @@
-== README
+== TAREAS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Actualizar el modelo Weapon para que la Factory funcione como un singleton por el atributo name
 
-Things you may want to cover:
+2. Economizar municiones (problema de la mochila knap-sack - recalcular en cada turno)
 
-* Ruby version
+3. Las armas pueden tener efectos secundarios - Freeze (el otro robot se salta su próximo ataque)
 
-* System dependencies
+4. En el formulario de robot se puede elegir un CodeName por nombre, o bien, se puede agregar uno por texto. En el último caso se debe el CodeName con todos los datos necesarios para generar una instancia válida.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+5. Verificar que el link de la aplicación siempre funciona correctamente. Adicionalmente debe marcarse en las vistas donde se crean nuevos elementos (si está en /robots/new debe estar activada robots/ link)
