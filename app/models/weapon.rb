@@ -8,17 +8,6 @@ class Weapon < ActiveRecord::Base
   # validates :name, uniqueness: true
   # validate :get_instance_by_name
 
-  before_create :lawl
-
-  def initialize(attributes = nil, options = {})
-    puts ':o'
-    super
-  end
-
-  def lawl
-    puts ':O'
-  end
-
   def get_instance_by_name
     # return the existing object if any, otherwise return true
   end
