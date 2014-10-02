@@ -2,7 +2,8 @@ class Weapon < ActiveRecord::Base
   has_many :robot_weapons
   has_many :robots, through: :robot_weapons
 
-  # should be uniq by name -
+  validates_uniqueness_of :name
+
   # if created with the same name as one previously saved should return that one
 
   # validates :name, uniqueness: true
@@ -12,13 +13,14 @@ class Weapon < ActiveRecord::Base
     # return the existing object if any, otherwise return true
   end
 
-  def new_record?
-    if self.name.present?
+  def create_or_update
+    if new_record? and name.present?
       weapon = Weapon.find_by(name: self.name)
       if weapon.present?
         self.id = weapon.id
         self.created_at = weapon.created_at
-        return false
+        result = update_record
+        return result != false
       end
     end
     super
