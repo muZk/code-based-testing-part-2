@@ -45,7 +45,7 @@ RSpec.describe Robot, :type => :model do
       # stub valid_and_heavier_weapon?
       robot = FactoryGirl.create(:robot)
       # robot.unstub
-      robot.stub(:valid_and_heavier_weapon?)
+      #robot.stub(:valid_and_heavier_weapon?)
       expect(robot.calculate_damage).to be > 0 
       # should be a number ... in the future might accept 0
     end
@@ -59,6 +59,7 @@ RSpec.describe Robot, :type => :model do
 
       it "Should return robot damage if the total_health is equal to the robot damage" do
         robot = FactoryGirl.create(:t_x)
+
         expect(robot.calculate_damage(robot.damage)).to eq(robot.damage)
       end
 

@@ -35,9 +35,10 @@ class Robot < ActiveRecord::Base
     stable_weapons = robot_weapons.to_a.delete_if{ |weapon| !weapon.stable? }
     stable_weapons = stable_weapons.map{ |weapon| weapon.weapon } # Para que funcione obtener el daño con el key :damage
     stable_weapons << Weapon.new(damage: self.damage) # Para que entre en el calculo el daño del robot
+
     # Combinacion de armas que cumple (1)
-    best_combination = Optimization.optimize(total_health, stable_weapons, :damage)
-    best_combination[:combination].first[:damage]
+    best = Optimization.optimize(stable_weapons, :damage, total_health).first
+    best[:damage]
   end
 
   def valid_and_heavier_weapon?(max_damage, weapon_instance)
