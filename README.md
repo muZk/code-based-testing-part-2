@@ -23,4 +23,4 @@ __Status:__ Se agregó al formulario de robots esta funcionalidad de la siguient
 
 #### 5) Verificar que el link de la aplicación siempre funciona correctamente. Adicionalmente debe marcarse en las vistas donde se crean nuevos elementos (si está en /robots/new debe estar activada robots/ link) ####
 
-__Status:__ Se modificó el helper que imprime los <li> con clase activa, para que cumpliera con la funcionalidad y además __se agregaron los tests que prueban que la pág funcione y que verifique el correcto funcionamiento de los <li>.
+__Status:__ Se modificó el helper que imprime los _li_ con clase activa, para que cumpliera con la funcionalidad y además __se agregaron los tests que prueban que la pág funcione y que verifique el correcto funcionamiento de los _li_.
