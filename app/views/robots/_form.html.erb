@@ -13,16 +13,11 @@
 
     Select a code name...
 
-    <div class="field">
-      <%= f.label :code_name_id %><br>
-      <%= f.number_field :code_name_id %>
-    </div>
-
     Or create a new one:
 
     <%= render "application/shared/code_name_form", f: f %>
 
-    <%= render "application/shared/health_form", f: f %>
+   <%= render "application/shared/health_form", f: f %>
 
     <%= f.fields_for :robot_weapons do |robot_weapon_form| %>
         <%= render "application/shared/robot_weapon_form", f: robot_weapon_form %>
