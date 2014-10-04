@@ -37,6 +37,15 @@ RSpec.describe Weapon, :type => :model do
       gun2.save
       expect(gun2.id == gun1.id).to be true
     end
+
+    it "Weapon with freeze" do
+      gun = FactoryGirl.create(:freeze_gun)
+      expect(gun.can_freeze).to be true
+      expect(gun.can_freeze?).to be true
+    end
+
   end
+
+
 
 end
