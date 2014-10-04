@@ -29,6 +29,14 @@ RSpec.describe Weapon, :type => :model do
       gun2 = FactoryGirl.create(:bazuka)
       expect(gun1.id == gun2.id).to be true
     end
+
+    it "should return the other instance when update the name to an existent name" do
+      gun1 = FactoryGirl.create(:bazuka)
+      gun2 = FactoryGirl.create(:rifle)
+      gun2.name = gun1.name
+      gun2.save
+      expect(gun2.id == gun1.id).to be true
+    end
   end
 
 end
