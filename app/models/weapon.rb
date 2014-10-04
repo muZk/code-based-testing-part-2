@@ -13,6 +13,10 @@ class Weapon < ActiveRecord::Base
     # return the existing object if any, otherwise return true
   end
 
+  def can_freeze?
+    can_freeze
+  end
+
   def create_or_update
 
     if self.name.present?

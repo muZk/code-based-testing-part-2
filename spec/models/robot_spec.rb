@@ -89,4 +89,21 @@ RSpec.describe Robot, :type => :model do
     end
   end
 
+  context '#frozen ability' do
+
+    it "Should be created with is_frozen false" do
+      robot = Robot.new
+      expect(robot.is_frozen).to eq false
+    end
+
+    it "Should freeze if the weapon used has freeze ability" do
+      robot = FactoryGirl.create(:robot_with_frozen_weapon)
+      expect(robot.used_freeze?).to eq false
+      expect(robot.calculate_damage(3)).to eq(3)
+      expect(robot.used_freeze?).to eq true
+      expect(robot.used_freeze?).to eq false
+    end
+
+  end
+
 end
