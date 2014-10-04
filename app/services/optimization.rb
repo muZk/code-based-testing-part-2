@@ -1,5 +1,7 @@
 class Optimization
 
+  # Algoritmo genético sin crossover, y con selección por torneo de tamaño 2
+
   attr_accessor :max_value, :objects, :key
   attr_accessor :generations, :current_generation, :best
 
