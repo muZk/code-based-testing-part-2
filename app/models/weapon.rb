@@ -28,7 +28,7 @@ class Weapon < ActiveRecord::Base
           return result != false
         else
           self.id = weapon.id
-          puts 'lel'
+          changed_attributes.delete(:id)
         end
 
       end
